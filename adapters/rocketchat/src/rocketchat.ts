@@ -93,6 +93,7 @@ class RocketChat {
 			}
 			else {
 				let mention = false;
+				let livechat = false;
 
 				if (message.mentions) {
 					message.mentions.some((m: any) => {
@@ -103,6 +104,10 @@ class RocketChat {
 					});
 				}
 
+				if (message.token) {
+					livechat = true;
+				}
+
 				this.events.emit('incoming', {
 					_id: message._id,
 					message: message.msg,
@@ -111,6 +116,7 @@ class RocketChat {
 					channel: message.rid,
 					adapter: this.name,
 					dm: meta.roomType === 'd',
+					livechat: livechat,
 					joined: message.t && message.t === 'au' && message.msg === this.username,
 					mention: mention
 				});
@@ -142,6 +148,10 @@ class RocketChat {
 
 	sendMessage(msg: string | any, event: any) {
 		return driver.sendToRoomId(msg, event.channel);
+	}
+
+	sendDirectMessage(msg: string | any, event: any) {
+		return driver.sendDirectToUser(msg, event.user.username);
 	}
 
 	asyncCall(method: string, params: any[]) {
