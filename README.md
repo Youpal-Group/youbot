@@ -23,4 +23,4 @@ If you want to create a new script:
 
 On error `Cannot read property '_id' of undefined`
 
-- Go to `/modules/channel-rocketchat/node_modules/@rocket.chat/sdk/dist/lib/driver.js` after line 355 add the code `message = message.shift();`
+- Go to `/adapters/rocketchat/node_modules/@rocket.chat/sdk/dist/lib/driver.js` after line 355 add the code `message = message.shift();`
