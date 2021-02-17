@@ -11,6 +11,6 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@rocket.chat/sdk": "^0.2.9-2"
+    "@rocket.chat/sdk": "https://github.com/bkrith/Rocket.Chat.js.SDK.git#fix-_id-undefined-issue"
   }
 }
