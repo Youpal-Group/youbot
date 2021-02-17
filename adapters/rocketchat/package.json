@@ -1,0 +1,16 @@
+{
+  "name": "channel-rocketchat",
+  "fullName": "Channel RocketChat",
+  "version": "1.0.0",
+  "description": "Youbot connector for RocketChat",
+  "private": true,
+  "author": "Vassilis Kritharakis",
+  "license": "AGPL-3.0-only",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@rocket.chat/sdk": "^0.2.9-2"
+  }
+}

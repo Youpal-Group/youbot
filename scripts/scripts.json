@@ -1,0 +1,8 @@
+{
+    "scripts": [
+        "commands",
+        "mongo",
+        "command-email",
+        "rocketchat-api"
+    ]
+}

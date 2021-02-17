@@ -1,0 +1,31 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "strongloop",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "ignorePatterns": [
+        "build/*.js",
+        "*.js"
+    ],
+    "rules": {
+        "indent": ["error", "tab"],
+        "comma-dangle": "off",
+        "max-len": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": [ "error", { "argsIgnorePattern": "next" } ],
+        "brace-style": "off",
+        "space-before-function-paren": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+    }
+}
