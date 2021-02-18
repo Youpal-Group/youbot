@@ -1,6 +1,6 @@
 
 module.exports = {
-	name: 'command-email',
+	name: 'command-name',
 	onDemand: true,
 	script: async (event, bot, params) => {
 		try {
@@ -13,19 +13,16 @@ module.exports = {
 				data: undefined
 			});
 
-			let response = 'I found ';
+			let response = '';
 
 			if (!res) {
 				response = params + ' not exists!';
 			}
-			else if (res.user && res.user.emails && res.user.emails.length) {
-				res.user.emails.forEach((email, inx) => {
-					if (inx) response += ', ';
-					response += email.address;
-				});
+			else if (res.user && res.user.name) {
+				response = params + "'s name is " + res.user.name;
 			}
 			else {
-				response += 'no emails!';
+				response = 'Has no name!';
 			}
 
 			event.message = response;
@@ -35,7 +32,7 @@ module.exports = {
 			return false;
 		}
 		catch (err) {
-			bot.logger.error('Command-email', err);
+			bot.logger.error('Command-name', err);
 
 			return true;
 		}

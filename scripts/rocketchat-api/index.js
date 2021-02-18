@@ -84,7 +84,14 @@ const executeCall = (bot, args, ranOnce = false) => {
 
 				return executeCall(bot, args, true);
 			}
-			bot.logger.error('RocketChat API Script', err);
+
+			if (err.response && err.response.data && !err.response.data.success && err.response.data.error) {
+				bot.logger.error('RocketChat API Script', err.response.data.error);
+			}
+			else {
+				bot.logger.error('RocketChat API Script', err);
+			}
+
 			return false;
 		});
 }

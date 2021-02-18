@@ -3,6 +3,7 @@
         "commands",
         "mongo",
         "command-email",
+        "command-name",
         "command-ui",
         "rocketchat-api"
     ]
