@@ -2,7 +2,7 @@ import Mongo from 'mongodb';
 import { logger } from './utils';
 
 class Database {
-	private db: Mongo.Db | undefined;
+	public db: Mongo.Db | undefined;
 	private mongoClient: Mongo.MongoClient;
 
 	constructor(config: any) {

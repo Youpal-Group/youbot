@@ -4,6 +4,7 @@
         "mongo",
         "command-email",
         "command-name",
+        "command-create-ticket",
         "command-ui",
         "rocketchat-api"
     ]

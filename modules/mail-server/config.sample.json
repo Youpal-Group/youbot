@@ -1,0 +1,8 @@
+{
+    "host": "smtphost",
+    "port": 2525,
+    "auth": {
+        "user": "user",
+        "pass": "pass"
+    }
+}

@@ -2,6 +2,7 @@
     "middlewares": [
         "welcome",
         "mention",
+        "flags",
         "direct-commands",
         "mongo"
     ]

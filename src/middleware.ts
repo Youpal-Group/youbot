@@ -7,13 +7,17 @@ class Middleware {
 	public adapters: any[];
 	public messages: any[];
 	public scripts: any[];
+	public modules: any[];
 	public db: Database;
+	public temp: any;
 
-	constructor(db: Database, bots: any [], adapters: any[], scripts: any[]) {
+	constructor(db: Database, bots: any [], adapters: any[], scripts: any[], modules: any[]) {
 		this.bots = bots;
 		this.adapters = adapters;
 		this.scripts = scripts;
+		this.modules = modules;
 		this.messages = [];
+		this.temp = {};
 		this.db = db;
 
 		this.adapters.forEach((adapter) => {
@@ -35,9 +39,22 @@ class Middleware {
 			});
 		});
 
+		this.initModules();
+
 		setInterval(async () => {
 			await this.processMessage();
 		}, 200);
+	}
+
+	private initModules() {
+		this.modules = this.modules.map((mod: any) => {
+			const temp = {
+				name: mod.name,
+				...(mod.script(this))
+			};
+
+			return temp;
+		});
 	}
 
 	processMessage() {
@@ -72,14 +89,16 @@ class Middleware {
 						http: axios,
 						db: this.db,
 						logger: logger,
+						temp: this.temp,
 						adapter: this.adapters.filter((adapter) => adapter.name === message.adapter)[0],
+						module: (name: string) => this.modules.filter((s) => s.name === name)[0] || undefined,
 						getAdapter: (name: string) => this.adapters.filter((s) => s.name === name)[0] || undefined,
 						script: (name: string) => this.scripts.filter((s) => s.name === name)[0] || undefined,
-						hear: async (regex: string, callback: any, elseCallback?: any) => {
+						hear: async (regex: RegExp, callback: any, elseCallback?: any) => {
 							const matches = message.message.match(regex);
 							if (matches !== null) {
-								matches.forEach((m: string, mInx: number) => {
-									matches[mInx] = m.trim();
+								matches.forEach((m: any, mInx: number) => {
+									if ((typeof m) === 'string') matches[mInx] = m.trim();
 								});
 								if (matches[1]) matches[1] = matches[1].toLowerCase();
 								return callback(matches);
