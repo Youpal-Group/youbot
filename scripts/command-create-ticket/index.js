@@ -130,11 +130,6 @@ module.exports = {
                                 text: "Dismiss",
                                 msg_in_chat_window: true,
                                 msg: "dismiss"
-                            },{
-                                type: "button",
-                                text: "Change e-mail",
-                                msg_in_chat_window: true,
-                                msg: "change e-mail"
                             },
                             {
                                 type: "button",

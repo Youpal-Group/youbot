@@ -82,46 +82,52 @@ class RocketChat {
 	}
 
 	async listen() {
-		const options = {
-			dm: true,
-			livechat: true,
-			edited: true
-		};
-		return driver.respondToMessages(async (err, message, meta) => {
-			if (err) {
-				logger.error('RocketChat', err);
-			}
-			else {
-				let mention = false;
-				let livechat = false;
+		try {
+			const options = {
+				dm: true,
+				livechat: true,
+				edited: true
+			};
 
-				if (message.mentions) {
-					message.mentions.some((m: any) => {
-						if (m.username === this.username) {
-							mention = true;
-							return true;
-						}
+			return driver.respondToMessages(async (err, message, meta) => {
+				if (err) {
+					logger.error('RocketChat', err);
+				}
+				else {
+					let mention = false;
+					let livechat = false;
+
+					if (message.mentions) {
+						message.mentions.some((m: any) => {
+							if (m.username === this.username) {
+								mention = true;
+								return true;
+							}
+						});
+					}
+
+					if (message.token) {
+						livechat = true;
+					}
+
+					this.events.emit('incoming', {
+						_id: message._id,
+						message: message.msg,
+						username: this.username,
+						user: message.u,
+						channel: message.rid,
+						adapter: this.name,
+						dm: meta.roomType === 'd',
+						livechat: livechat,
+						joined: message.t && message.t === 'au' && message.msg === this.username,
+						mention: mention
 					});
 				}
-
-				if (message.token) {
-					livechat = true;
-				}
-
-				this.events.emit('incoming', {
-					_id: message._id,
-					message: message.msg,
-					username: this.username,
-					user: message.u,
-					channel: message.rid,
-					adapter: this.name,
-					dm: meta.roomType === 'd',
-					livechat: livechat,
-					joined: message.t && message.t === 'au' && message.msg === this.username,
-					mention: mention
-				});
-			}
-		}, options);
+			}, options);
+		}
+		catch (err) {
+			logger.error('RocketChat', err);
+		}
 	}
 
 	incoming(func: any) {

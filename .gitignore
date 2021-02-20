@@ -8,6 +8,7 @@ config.json
 
 # production
 /dist
+/frontend
 /logs
 *.log
 
