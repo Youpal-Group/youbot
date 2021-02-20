@@ -4,6 +4,7 @@
         "mention",
         "flags",
         "direct-commands",
-        "mongo"
+        "mongo",
+        "help"
     ]
 }

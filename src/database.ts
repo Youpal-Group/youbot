@@ -32,7 +32,8 @@ class Database {
 					{ _id: message.savedId },
 					{
 						$set: {
-							answer: message.message
+							answer: message.message,
+							updated: Date.now()
 						}
 					},
 					(err) => {
@@ -53,7 +54,8 @@ class Database {
 			if (this.db) {
 				this.db.collection('qnas').insertOne(
 					{
-						question: message.message
+						question: message.message,
+						created: Date.now()
 					},
 					(err, res) => {
 						if (err) {

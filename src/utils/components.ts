@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { getConfig } from '.';
+import { commentParser, getConfig } from '.';
 
 const getComponents = (name: string) => {
 	return new Promise((resolve, reject) => {
@@ -51,6 +51,7 @@ const checkItem = (components: any[], dir: string, list: string[], index = 0) =>
 							// eslint-disable-next-line @typescript-eslint/no-var-requires
 							let req = require(myPath + '/dist/index.js').default;
 							if (req === undefined) req = require(myPath + '/dist/index.js');
+							req.doc = await commentParser(myPath + '/dist/index.js');
 							components.push(req);
 						}
 						else {
@@ -60,6 +61,7 @@ const checkItem = (components: any[], dir: string, list: string[], index = 0) =>
 								// eslint-disable-next-line @typescript-eslint/no-var-requires
 								let req = require(myPath + '/index.js').default;
 								if (req === undefined) req = require(myPath + '/index.js');
+								req.doc = await commentParser(myPath + '/index.js');
 								components.push(req);
 							}
 						}

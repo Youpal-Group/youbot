@@ -1,4 +1,24 @@
 
+/*
+
+# Command:
+# .ui [kindOfUI|text|message]
+#
+# Params:
+#
+# kindOfUI:
+# title, button or link
+# message:
+# message to respond or link(url) - title has no message field - link accepts as message only urls - button accepts as message only text
+#
+# Examples:
+# .ui [title|This is my title] [button|this is my button|more info] [link|my link|https://google.com]
+#
+# Description:
+# UI - creates titles, buttons and links.
+
+*/
+
 module.exports = {
 	name: 'command-ui',
 	onDemand: true,

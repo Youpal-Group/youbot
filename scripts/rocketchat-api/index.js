@@ -100,6 +100,7 @@ module.exports = {
 	name: 'rocketchat-api',
 	onDemand: true,
 	script: async (event, bot, args) => {
+		console.log(event, bot, args);
 		await initRocketChat(bot);
 
 		return await executeCall(bot, args);

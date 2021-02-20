@@ -1,4 +1,25 @@
 
+/*
+
+# Questions:
+# I want to open a ticket
+# Open a ticket
+# Create a ticket
+# Create ticket
+# Open ticket
+# I want to crete a ticket
+#
+# Command:
+# .create-ticket
+#
+# Description:
+# Create a new ticket in Zammad (HelpDesk)
+#
+# Examples:
+# .create-ticket
+
+*/
+
 module.exports = {
 	name: 'command-create-ticket',
 	onDemand: true,

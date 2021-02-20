@@ -1,6 +1,6 @@
 import Database from './database';
 import axios from 'axios';
-import { logger } from './utils';
+import { logger, jsonParser } from './utils';
 
 class Middleware {
 	public bots: any[];
@@ -8,15 +8,24 @@ class Middleware {
 	public messages: any[];
 	public scripts: any[];
 	public modules: any[];
+	public qnas: string[];
 	public db: Database;
 	public temp: any;
 
-	constructor(db: Database, bots: any [], adapters: any[], scripts: any[], modules: any[]) {
+	constructor(db: Database, bots: any [], adapters: any[], scripts: any[], modules: any[], qnafile: string) {
 		this.bots = bots;
 		this.adapters = adapters;
 		this.scripts = scripts;
 		this.modules = modules;
 		this.messages = [];
+		this.qnas = jsonParser(qnafile);
+
+		this.scripts.forEach((s) => {
+			if (s.doc.questions.length) {
+				s.doc.questions.forEach((q: string) => this.qnas.push(q));
+			}
+		});
+
 		this.temp = {};
 		this.db = db;
 
@@ -90,6 +99,7 @@ class Middleware {
 						db: this.db,
 						logger: logger,
 						temp: this.temp,
+						questions: this.qnas,
 						adapter: this.adapters.filter((adapter) => adapter.name === message.adapter)[0],
 						module: (name: string) => this.modules.filter((s) => s.name === name)[0] || undefined,
 						getAdapter: (name: string) => this.adapters.filter((s) => s.name === name)[0] || undefined,

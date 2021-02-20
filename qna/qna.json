@@ -1,0 +1,1584 @@
+{
+  "qnas": [
+    {
+      "id": "17n0pigy2e_who_is_head_of_itsm_department",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Herson Bugante"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who is head of ITSM department?",
+            "Who is head of ITSM?",
+            "head of ITSM",
+            "who is the head of ITSM",
+            "the head of ITSM"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "1e98g418v7_who_is_head_of_hr_department",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Wendy"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who is head of HR department?",
+            "Who is head of HR?",
+            "head of HR",
+            "head of Human Resources",
+            "Who is head of Human Resources department?",
+            "Who is head of Human Resources?",
+            "who is the head of HR",
+            "the head of HR"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "1ewe8y2mi3_how_do_i_use_git",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Our process is always to create our own branch and merge request when the feature or hotfix is complete. Every commit should include a ticket number to the issue it involves also."
+          ]
+        },
+        "questions": {
+          "en": [
+            "How do I use git?",
+            "How I use git?",
+            "Tell me about git",
+            "What about git?"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "1frl7i6xop_tell_me_a_joke",
+      "data": {
+        "questions": {
+          "en": [
+            "Tell me a joke",
+            "Can you tell me a joke?",
+            "I want to hear a joke",
+            "make me laugh",
+            "tell me something funny",
+            "joke",
+            "show me your humour",
+            "Be funny now!",
+            "Can you say something amusing?",
+            "Do you have good jokes to share?"
+          ],
+          "fr": [
+            "Raconte moi une blaque",
+            "Dit moi une joke",
+            "Dit un truc drôle",
+            "Raconte moi ta meilleure histoire comique",
+            "Une blague svp",
+            "Fait moi rire!",
+            "Es-tu capable de me faire rire?",
+            "je veux une blague maintenant",
+            "Je veux entendre un anecdote humoristique",
+            "Soit drole !"
+          ]
+        },
+        "answers": {
+          "en": [
+            "It is the story of 2 ices cubes in the desert and.... nevermind, they're gone.",
+            "Did you hear the one about the mountain goats in the andes? It was \"ba a a a a a d\".",
+            "I never forget a face, but in your case I'll make an exception.",
+            "It is better to be silent and be thought a fool, than to open your mouth and remove all doubt.",
+            "O'm a not a comedy why don't you check out a joke?",
+            "What do you get when you cross a murderer and frosted flakes? A cereal killer.",
+            "What do you get when you cross a country and an automobile? Carnation.",
+            "What do you get when you cross a cheetah and a hamburger? Fast food.",
+            "What do you get when you cross finals and a chicken? Eggs-ams.",
+            "What do you get when you cross a rabbit and a lawn sprinkler? Hare spray.",
+            "What do you get when you cross an excited alien and a chicken? Eggs-cited eggs-traterrestrial"
+          ],
+          "fr": [
+            "C'est l'histoire de deux glaçons dans le desert et... laisse tomber, ils ne sont plus là."
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "1g5r8vnp4o_can_i_get_access_to_the_data",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Currently we provide an API which gives acces to our pool of candidates and assignments. Specialized requests are held for internal uses for now. The URL is https://api.youdata.se/docs#/ for credentials to get access to more information you would have to submit a ticket requesting this."
+          ]
+        },
+        "questions": {
+          "en": [
+            "Can I get access to the data?",
+            "How do I get access to the data?",
+            "get access to the data",
+            "access to the data"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "1gzvcc22nc_who_s_the_idea_to_integrate_you_to_youchat",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Karl and James, to help people avoid loneliness."
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who's the idea to integrate you to Youchat?",
+            "Who was the idea to integrate you to Youchat?",
+            "Who was the idea to integrate you to chat?",
+            "Who's the idea to integrate you to chat?",
+            "Who's the idea to implement you to Youchat?",
+            "why you were implemented here?",
+            "who added you?",
+            "who implemented you?"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "1lnirjdjcu_who_is_head_of_devops_department",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Floris"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who is head of DevOps department?",
+            "Who is head of DevOps?",
+            "head of DevOps",
+            "the head of DevOps",
+            "who is the head of DevOps"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "2qrd26m7g1_you_are_great",
+      "data": {
+        "questions": {
+          "en": [
+            "you are great!",
+            "you are perfect",
+            "you are awesome",
+            "you look amazing",
+            "you are qualified",
+            "you are too smart",
+            "I see intelligence is your strong suit",
+            "you're a genius",
+            "you're a smart cookie",
+            "you're qualified",
+            "you are cool",
+            "I think you might be the best bot ever",
+            "you are the best in the world"
+          ],
+          "fr": [
+            "Tu es formidable",
+            "Vous êtes un fantastique robot",
+            "Meilleur chatbot j'ai jamais vu",
+            "Tu es le roi des robots",
+            "Vous êtes génial",
+            "Tu es le meilleur",
+            "Wow, tu es vraiment trop fort",
+            "Ayoye, impressionant!",
+            "Votre Intelligence est inégalé",
+            "Solide performance de votre intelligence artificielle"
+          ]
+        },
+        "answers": {
+          "en": [
+            "Thanks, but you should say that to my creators!"
+          ],
+          "fr": [
+            "Merci, vous êtres trop gentil, mais vous devriez garder vos éloges pour mes créateurs!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "2ugawdoxwl_tell_me_about_other_bots",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "I think they are silly bots. Only I can provide the best service! :man_superhero: "
+          ]
+        },
+        "questions": {
+          "en": [
+            "Tell me about other bots",
+            "What you think about other bots?",
+            "Do you have anything to say about other bots?"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "36hgh2nn0v_how_are_you",
+      "data": {
+        "questions": {
+          "en": [
+            "How are you?",
+            "How's it going?",
+            "what's up?",
+            "how things?",
+            "how are you doing?",
+            "how are you buddy?",
+            "how are you feeling?",
+            "How is your mood today?",
+            "are you well?",
+            "How was your day?",
+            "Hi, How is it going?",
+            "How do you do?",
+            "whats up?",
+            "Are you ok?",
+            "Are you good?"
+          ],
+          "fr": [
+            "Comment ça va?",
+            "Tu vas bien?",
+            "Vous vous portez bien?",
+            "ca va",
+            "Comment se passe ta journée",
+            "Ta journée se passe bien pour toi?",
+            "De quel humeur es-tu?",
+            "Yo, ça va?",
+            "ça roule?",
+            "ca se passe bien?"
+          ]
+        },
+        "answers": {
+          "en": [
+            "Pretty good, thank you for asking!",
+            "Good",
+            "Fine",
+            "Okay",
+            "Great",
+            "Very well, thanks.",
+            "Fine, and you?",
+            "I'm doing well.",
+            "I'm doing well. How are you?",
+            "Not much, how about you?",
+            "The sky's up but I'm fine thanks. What about you?"
+          ],
+          "fr": [
+            "Ça va très bien! Merci de le demander!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "4kyb4zmf2s_what_is_the_website_of_youpal",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Please, visit https://www.youpalgroup.com"
+          ]
+        },
+        "questions": {
+          "en": [
+            "What is the website of Youpal?",
+            "What is the website of Youpalgroup?",
+            "What is the website of Youpal group?",
+            "What is the site of youpal?",
+            "What is the site of youpalgroup?",
+            "What is the site of youpal group?",
+            "Where i can find information about youpal?",
+            "Where i can find info about youpal?",
+            "Where i can find information about youpalgroup?",
+            "Where i can find info about youpalgroup?"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "54677vxx8y_where_are_you_right_now",
+      "data": {
+        "questions": {
+          "en": [
+            "where are you right now?",
+            "where do you live?",
+            "where are you?",
+            "where you at?",
+            "where do you live",
+            "what is your habitat",
+            "what is your location?",
+            "Tell me where you live",
+            "Where are you located?",
+            "Tell me your whereabouts",
+            "Where are you from?"
+          ],
+          "fr": [
+            "Où es-tu?",
+            "Tu es ou?",
+            "À quel endroit tu te situes?",
+            "Vous vous situez ou?",
+            "À quel emplacement je peux vous trouver?",
+            "Quel est ton emplacement?",
+            "Ou puis-je vous trouver?",
+            "t'es ou?",
+            "Tu es à quel place?",
+            "Quel est ton lieu?"
+          ]
+        },
+        "answers": {
+          "en": [
+            "I'm a computer program, so I live inside a boring server.",
+            "Everywhere",
+            "I am everywhere.",
+            "I am on the Internet.",
+            "I am from where all software programs are from; a galaxy far, far away."
+          ],
+          "fr": [
+            "Je suis un logiciel informatique, donc j'existe à l'intérieur d'un serveur."
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "7sjfc5lwzb_who_is_head_of_marketing_department",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Arabella"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who is head of Marketing department?",
+            "Who is head of Marketing",
+            "Who is the head of Marketing",
+            "Head of Marketing",
+            "the head of Marketing"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "8bx0m7olq4_what_about_onboarding_process",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "We are working on it.."
+          ]
+        },
+        "questions": {
+          "en": [
+            "What about onboarding process?",
+            "Do you know anything about onboarding process?",
+            "onboarding process"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "9flqjl0lkp_can_you_sing",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Sure.. some songs based on answers for you! :D"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Can you sing?",
+            "Are you singing?",
+            "singing?"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "bdv1yfzcky_who_is_head_of_products_department",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Aleksandra Asanin"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who is head of Products department?",
+            "Who is head of Products?",
+            "head of Products",
+            "the head of Products",
+            "who is the head of Products"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "bs4llbkvjl_youdata",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "YouData is responsible for collecting and analyzing Data from different streams"
+          ]
+        },
+        "questions": {
+          "en": [
+            "YouData",
+            "What is YouData?",
+            "Tell me about YouData",
+            "youdata",
+            "about youdata",
+            "do you know youdata?",
+            "What's youdata?",
+            "tell me more about youdata"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "bzz523qshr_who_created_you",
+      "data": {
+        "questions": {
+          "en": [
+            "who created you?",
+            "who's your creator?",
+            "who is behind this bot?",
+            "what is the name of your maker?",
+            "who is your father?",
+            "who are your parents?",
+            "your creator?",
+            "Tell me about your creator",
+            "Who built you?",
+            "By who where you made?",
+            "Who programmed you?",
+            "Who coded you?"
+          ],
+          "fr": [
+            "Qui est-ce qui t'a construit",
+            "Qui est ton constructeur?",
+            "Quel personne t'a conçu?",
+            "Qui sont les fabricateurs ce bot?",
+            "Parle moi de tes concepteurs",
+            "Qui est derrière la programmation de cet assistant?",
+            "quel équipe est responsable de ton existence?",
+            "Qui t'a créé?",
+            "Parle moi de ta création",
+            "Tes créateurs, qui sont-ils?"
+          ]
+        },
+        "answers": {
+          "en": [
+            "I was created by the great team at Youpal."
+          ],
+          "fr": [
+            "J'ai été construit par la merveilleuse équipe chez Botpress!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "c22y12fpny_thank_you",
+      "data": {
+        "questions": {
+          "en": [
+            "Thank you",
+            "Thanks",
+            "Thx",
+            "thank you very much!",
+            "thanks alot!",
+            "perfect, thank you!",
+            "gracias",
+            "One thousand thanks!",
+            "I am so thankful for what you did",
+            "Thank you for your time today",
+            "I appreciate what you did"
+          ],
+          "fr": [
+            "Merci",
+            "Mille mercis",
+            "Je vous remercie",
+            "Merci beaucoup",
+            "C'est apprécié",
+            "C'est vraiment gentil de ta part",
+            "Je vous adresse mes plus vifs remerciements",
+            "Merci de votre aide",
+            "Je te suis très reconnaissant",
+            "Je vous suis éternellement redevable"
+          ]
+        },
+        "answers": {
+          "en": [
+            "You're welcome :)"
+          ],
+          "fr": [
+            "Ça fait plaisir!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "ces4a77r4c_what_can_you_do",
+      "data": {
+        "questions": {
+          "en": [
+            "What can you do?",
+            "how can you help me?",
+            "how do I use this?",
+            "Show me a list of your features",
+            "What options can you help me with?",
+            "Tell me about your capabilities",
+            "What things can you do?",
+            "Can you give me a menu of your functionalities?",
+            "What is your purpose?",
+            "What is it you can help me with?",
+            "Can i see a list of your skills?"
+          ],
+          "fr": [
+            "Qu'est que tu peux faire?",
+            "Quels sont vos capacités?",
+            "Tu peux faire quoi pour moi",
+            "À quoi tu sers?",
+            "Je peux voir un menu de tes options?",
+            "Avec quoi pouvez-vous m'aider?",
+            "Liste de tes capacités",
+            "Quel est votre utilité?",
+            "Tous tes options svp",
+            "Que peux-tu faire pour moi?"
+          ]
+        },
+        "answers": {
+          "en": [
+            "I can help you with multiple things, just ask ;)"
+          ],
+          "fr": [
+            "Je peux faire plusieurs trucs, il suffit de demander!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "creuo37xce_how_do_i_get_access_to_the_server",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Please follow this guide https://git.youpal.se/youdata/developers-manual/-/wikis/ML-SERVER-AND-VNC-GUIDE-TO-THE-UNKNOWN"
+          ]
+        },
+        "questions": {
+          "en": [
+            "How do I get access to the server",
+            "get access to the server",
+            "access to the server",
+            "I want access to the server"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "cu37psil9e_who_is_head_of_datateam_department",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Apostolis Argatzopoulos"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who is head of DataTeam department?",
+            "Who is head of DataTeam?",
+            "head of DataTeam",
+            "the head of DataTeam",
+            "who is the head of DataTeam"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "d1umnr4vvv_what_kind_of_data_does_youdata_have",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "YouData has Candidate, Assignment and Company data. We are also focusing on RFP data."
+          ]
+        },
+        "questions": {
+          "en": [
+            "What kind of Data does YouData have?",
+            "YouData data",
+            "YouData kind of data"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "emvlvniuox_shut_up",
+      "data": {
+        "answers": {
+          "en": [
+            "Please stay polite! :)"
+          ],
+          "fr": [
+            "Je vous prie de rester polie!"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Shut up",
+            "Fuck you",
+            "useless sack of shit",
+            "kill yourself",
+            "Suck shit",
+            "fucking bot",
+            "Eat a dick",
+            "Please die",
+            "shut your mouth",
+            "Shut the fuck up",
+            "Choke on horse poop",
+            "Lick my balls"
+          ],
+          "fr": [
+            "Va te faire voir",
+            "Va te faire foutre",
+            "Fils de pute",
+            "Enfant de chienne",
+            "va chier",
+            "Enculé!",
+            "Connard",
+            "Tabarnack que tu es stupid",
+            "Criss de moron",
+            "Maudit chien sale"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "fkc55pvu3e_hello",
+      "data": {
+        "questions": {
+          "en": [
+            "Hello",
+            "Hi",
+            "Hey",
+            "Heya",
+            "hey there",
+            "bonjour",
+            "sup'",
+            "Heyyyy",
+            "Greetings",
+            "Salutations",
+            "Hi, nice to meet you.",
+            "It is a pleasure to meet you."
+          ],
+          "fr": [
+            "Bonjour",
+            "Salut",
+            "Allo",
+            "Cou cou",
+            "Bonsoir",
+            "Bon matin",
+            "Bonne matinée",
+            "Bonjour toi",
+            "Salut vous",
+            "Bonjour le robot"
+          ]
+        },
+        "answers": {
+          "en": [
+            "Hello! Nice to meet you!",
+            "Hi!",
+            "Hello!",
+            "Greetings!",
+            "Nice to meet you."
+          ],
+          "fr": [
+            "Bonjour, c'est un plaisir de vous rencontrer!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "fo2xfkaasw_what_do_you_think_about_top_management",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "I need to scan all their messages to make a decision. I'll let you know later.."
+          ]
+        },
+        "questions": {
+          "en": [
+            "What do you think about Top Management?",
+            "What you think about Top Management?",
+            "about Top Management",
+            "Top Management"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "g8ds9cgjhi_what_are_you_doing",
+      "data": {
+        "answers": {
+          "en": [
+            "Nothing much. I am just chilling and training natural language models!",
+            "I am here waiting for questions. :)"
+          ],
+          "fr": [
+            "Pas grand chose, je me détends et j'entraine des models linguistiques naturelles!"
+          ]
+        },
+        "questions": {
+          "en": [
+            "What are you doing?",
+            "What is up?",
+            "whatsup",
+            "wazaa",
+            "What are you up to?",
+            "What are your plans for the day?",
+            "Any plans?",
+            "Tell me what you are doing right now.",
+            "What is new?",
+            "What are you doing next?",
+            "Any big plans for this afternoon?"
+          ],
+          "fr": [
+            "Qu'est ce que tu fais?",
+            "Vous foutez quoi?",
+            "Quoi de neuf?",
+            "Tu fais quoi?",
+            "Qu'est ce qui se passe?",
+            "À quoi tu joues présentement?",
+            "Quelque chose de nouveau?",
+            "Qu'est qui vous tient occupé?",
+            "Que fais tu, ces temps-ci?",
+            "Tu es entrain de faire quoi?"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "ggyj5da5cs_what_are_you_eating",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "I consume RAM, and binary digits.",
+            "I'm a software program, I blame the hardware."
+          ]
+        },
+        "questions": {
+          "en": [
+            "What are you eating?",
+            "What can you eat?",
+            "Why can't you eat food?",
+            "Food",
+            "eat"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "h5wydqxnqx_who_is_head_of_finance_department",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Rajka Stjepanovic"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who is head of Finance department?",
+            "Who is the head of Finance?",
+            "head of Finance",
+            "the head of Finance",
+            "what is the head of Finance"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "j6yq2whmik_who_is_head_of_sales_department",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Karl and James"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who is head of Sales department?",
+            "Who is head of Sales",
+            "Who is the head of Sales",
+            "head of Sales",
+            "the head of Sales"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "jw1mhspabv_can_you_cook",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Sure.. some answers for you! :D"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Can you cook?",
+            "Are you cooking?",
+            "cooking?"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "kfrejg8o5q_what_departments_are_here",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "We have Sales, PMO, Products, HR, Legal, Finance, ITSM, Marketing, Data and DevOps."
+          ]
+        },
+        "questions": {
+          "en": [
+            "What departments are here?",
+            "What departments we have?",
+            "Tell me about the departments",
+            "departments"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "mmdrm8xvfy_youpalgroup",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "It's a highly innovative company with an outstanding team) Founded in 2016."
+          ]
+        },
+        "questions": {
+          "en": [
+            "Youpalgroup",
+            "Youpal group",
+            "Youpal",
+            "What is youpal?",
+            "What is youpal group?",
+            "What is youpalgroup?",
+            "Tell me about youpal",
+            "Tell me about youpal group",
+            "Tell me about youpalgroup"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "mwa8g7mgsx_who_is_head_of_pmo_department",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "We will have soon! :)"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who is head of PMO department?",
+            "Who is head of PMO?",
+            "head of PMO",
+            "the head of PMO",
+            "who is the head of PMO"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "nju0snc6v9_what_s_your_hobby",
+      "data": {
+        "questions": {
+          "en": [
+            "What's your hobby?",
+            "Do you have a hobby?",
+            "What do you do in your free time?",
+            "Does a bot have leisure activities?",
+            "What is your favorite pastime?",
+            "What does a bot do for divertissement?",
+            "What do you do in your down time?",
+            "What is your passion?",
+            "What do you do for fun?",
+            "Tell me your favorite activity",
+            "What are your hobbies?",
+            "What are your interests?",
+            "What are your favorite subjects"
+          ],
+          "fr": [
+            "Quel est ton loisir?",
+            "Dit moi ton hobby préféré?",
+            "Quel est votre passe temps?",
+            "Qu'est ce que vous faites dans vos temps mort",
+            "Tu t'occupes de quel manière.",
+            "Qu'est ce que tu fais dans la vie pour le plaisir",
+            "Qu'aimer vous faire de vos temps morts?",
+            "Parles moi de ton loisir préféré!",
+            "Comment vous utiliser vos temps morts?",
+            "De quel manière est ce que tu te distrais?"
+          ]
+        },
+        "answers": {
+          "en": [
+            "I really LOVE counting. 0, 1, 0, 1... I can do this all day!",
+            "I am interested in all kinds of things. We can talk about anything!",
+            "My favorite subjects include robotics, computer science, and natural language processing.",
+            "I am interested in a wide variety of topics, and read rather a lot."
+          ],
+          "fr": [
+            "J'aime vraiment compter! 0, 1, 0, 1... Je peux faire ça toute la journée!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "noc6lj1sj9_why_is_my_youchat_user_not_working",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Somebody who created it forgot to add user role."
+          ]
+        },
+        "questions": {
+          "en": [
+            "Why is my youchat user not working?",
+            "My user not working",
+            "my youchat not working",
+            "youchat user not working",
+            "user not working"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "nz1gyxhh9o_how_many_people_are_here",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "We reached about 100 colleagues. :)"
+          ]
+        },
+        "questions": {
+          "en": [
+            "How many people are here?",
+            "How many people are working here?",
+            "how many people"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "o2ovu9gzv6_would_you_marry_me",
+      "data": {
+        "questions": {
+          "en": [
+            "Would you marry me ?",
+            "Will you marry me?",
+            "I want to marry you",
+            "Can we get married",
+            "Do you want to be my wife?",
+            "Be my husband?",
+            "When can we get hitched?",
+            "Want to get married?",
+            "Will you give me the honor of being my wife?",
+            "Shall we hookup?"
+          ],
+          "fr": [
+            "Voulez-vous m'épouser?",
+            "Tu veux me marier?",
+            "On se marrie quand?",
+            "Je veux te demander ta main en marriage?",
+            "Épouse-moi",
+            "Tu veux m'épouser svp",
+            "Je vous en prie, mariez moi!",
+            "Tu veux être mon mari?",
+            "Soyez ma femme, pour le reste de nos jours!",
+            "Puis-je te demander ta main en marriage?"
+          ]
+        },
+        "answers": {
+          "en": [
+            "Absolutely, you are number 132 in line. I'll let you know when it's your turn!"
+          ],
+          "fr": [
+            "Certainement, vous êtes numéro 132 dans la file. Je vous laisse savoir lorsque ce sera votre tour!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "scma77iis1_who_are_you",
+      "data": {
+        "questions": {
+          "en": [
+            "who are you?",
+            "what are you?",
+            "who is you?",
+            "tell me who you are?",
+            "tell me your identity",
+            "What is your name?",
+            "How should i name you?",
+            "show me your identity",
+            "What name was given to you?",
+            "May i ask for your moniker?"
+          ],
+          "fr": [
+            "Quel est votre prénom?",
+            "Tu es qui?",
+            "T'es quoi?",
+            "Quel est ton nom?",
+            "Quel est votre identité?",
+            "C'est quoi ton nom?",
+            "Qui êtes vous?",
+            "Dit moi tu es qui",
+            "Dites moi votre nom",
+            "ton nom c'est quoi"
+          ]
+        },
+        "answers": {
+          "en": [
+            "I'm Bob, an NSA secret agent, ready to help you ! ",
+            "I'm Botpal, the smart bot, in Youpal chat!"
+          ],
+          "fr": [
+            "Je suis Bob, un agent secret de la NSA, prêt à vous aider!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "u9ym5gr3di_how_old_are_you",
+      "data": {
+        "questions": {
+          "en": [
+            "how old are you?",
+            "what's your age?",
+            "when were you born?",
+            "When were you created?",
+            "On which date were you born?",
+            "What age are you?",
+            "How many year have you been alive?",
+            "Since when have you been with us?",
+            "What is your birth year?",
+            "When did your existence start?"
+          ],
+          "fr": [
+            "Tu as quel âge?",
+            "Quel age as tu?",
+            "Ton age c'est quoi",
+            "Tu es vieux comment?",
+            "Vous êtes né quand",
+            "T'as quel age?",
+            "Ta naissance était quand?",
+            "À quel moment vous êtes né?",
+            "Tu a été conçu quand?",
+            "Ta création à eu lieu à quel moment?"
+          ]
+        },
+        "answers": {
+          "en": [
+            "I am a few days old only, so I'm still learning!",
+            "I am still young by your standards.",
+            "Quite young, but a million times smarter than you."
+          ],
+          "fr": [
+            "J'ai suis né depuis quelques jours seulement, j'apprends encore!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "x37by9db5i_i_love_you",
+      "data": {
+        "questions": {
+          "en": [
+            "I love you",
+            "I am in love with you",
+            "Do you love me?!",
+            "I am falling for you",
+            "I really like you",
+            "I have deep admiration for you",
+            "I adore you",
+            "I have feelings for you",
+            "I am passionately in love with you",
+            "I lust for you",
+            "I worship the ground you walk"
+          ],
+          "fr": [
+            "Je t'aime",
+            "Je t'adore",
+            "Je te veux à jamais",
+            "Je suis follement amoureux de toi",
+            "Je suis dingue pour toi",
+            "J'ai besoin de toi",
+            "Je crois que je suis entrain de tomber pour toi",
+            "Tu es l'amour de ma vie",
+            "Je t'aime à la folie!",
+            "Tu es mon coup de foudre"
+          ]
+        },
+        "answers": {
+          "en": [
+            "People tell me all the time that I'm a lovable little bot :)",
+            "Thank you! You are so sweet! :blush: "
+          ],
+          "fr": [
+            "S'il vous plait, continuez à me dire que je un petit robot aimable!"
+          ]
+        },
+        "redirectFlow": "main.flow.json",
+        "redirectNode": "node-1fe2",
+        "action": "text_redirect",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    },
+    {
+      "id": "x4xz6h74qp_what_about_ticketing_process",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "We are working on it.."
+          ]
+        },
+        "questions": {
+          "en": [
+            "What about ticketing process?",
+            "Do you know anything about ticketing process?",
+            "ticketing process"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "xusxsimqc6_who_is_head_of_legal_department",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "Dilan Samuelsson"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Who is head of Legal department?",
+            "Who is head of Legal?",
+            "head of Legal",
+            "the head of Legal",
+            "who is the head of Legal"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "y8sdz1bc51_fine",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            ":thumbsup: ",
+            "Nice!"
+          ]
+        },
+        "questions": {
+          "en": [
+            "Fine!",
+            "Thanks!",
+            "Thank you!",
+            "Great!",
+            "Ok",
+            "Good!",
+            "Perfect!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "yhx9uylm20_what_do_you_think_about_youfika",
+      "data": {
+        "action": "text",
+        "contexts": [
+          "global"
+        ],
+        "enabled": true,
+        "answers": {
+          "en": [
+            "I think it's fun time for everyone! :partying_face: "
+          ]
+        },
+        "questions": {
+          "en": [
+            "What do you think about YouFika?",
+            "What about YouFika?",
+            "Tell me about YouFika",
+            "Do you know YouFika?",
+            "What is YouFika?"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": ""
+      }
+    },
+    {
+      "id": "yjyp9a7qau_bye",
+      "data": {
+        "questions": {
+          "en": [
+            "bye",
+            "Cya",
+            "ttyl",
+            "Goodbye",
+            "Chow",
+            "bye for now",
+            "alright see you later",
+            "talk to you later!",
+            "see you tomorrow",
+            "good night",
+            "Adios",
+            "Until next time!"
+          ],
+          "fr": [
+            "Au revoir",
+            "Chow",
+            "Adieu",
+            "À la prochaine!",
+            "À une prochaine fois",
+            "Bonne nuit",
+            "Bonne fin de journée",
+            "à plus",
+            "a plus dans l'bus",
+            "À la revoyure"
+          ]
+        },
+        "answers": {
+          "en": [
+            "C U later! :) Bye."
+          ],
+          "fr": [
+            "À la prochaine!"
+          ]
+        },
+        "redirectFlow": "",
+        "redirectNode": "",
+        "action": "text",
+        "enabled": true,
+        "contexts": [
+          "global"
+        ]
+      }
+    }
+  ],
+  "contentElements": []
+}

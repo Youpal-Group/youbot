@@ -1,4 +1,28 @@
 
+/*
+
+# Questions:
+# What is <username> name?
+# Give me <username> name
+# <username> name
+#
+# Command:
+# .name <username>
+#
+# Description:
+# Returns the full name for the given username
+#
+# Params:
+#
+# username:
+# any username from RocketChat
+#
+# Examples:
+# .name Vassilis
+# .name @Vassilis - (with mention)
+
+*/
+
 module.exports = {
 	name: 'command-name',
 	onDemand: true,

@@ -50,7 +50,7 @@ const initialize = async () => {
 
 		logger.info('Middleware', `Registered ${modules.length} modules`);
 
-		return new Middleware(new Database(config), bots, adapters, middlewares.concat(scripts), modules);
+		return new Middleware(new Database(config), bots, adapters, middlewares.concat(scripts), modules, config.qna);
 	}
 	catch (err) {
 		logger.error('Middleware', err);

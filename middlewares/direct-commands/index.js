@@ -17,7 +17,8 @@ module.exports = {
 				return false;
 			}
 			catch(err) {
-				bot.adapter.send('Something went wrong...');
+                event.message = 'Something went wrong...';
+				await bot.adapter.send(event);
 				bot.logger.error('Commands', err);
 
 				return true;

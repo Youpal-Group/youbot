@@ -29,19 +29,19 @@ class Logger {
 	}
 
 	info(component: string, message: string) {
-		this.logger.info('[' + component + '] ' + message);
+		this.logger.info(Date.now() + ' [' + component + '] ' + message);
 	}
 
 	warn(component: string, message: string) {
-		this.logger.warn('[' + component + '] ' + message);
+		this.logger.warn(Date.now() + ' [' + component + '] ' + message);
 	}
 
 	error(component: string, err: any) {
-		this.logger.error('[' + component + '] ' + this.formatError(err));
+		this.logger.error(Date.now() + ' [' + component + '] ' + this.formatError(err));
 	}
 
 	debug(component: string, message: string) {
-		this.logger.debug('[' + component + '] ' + message);
+		this.logger.debug(Date.now() + ' [' + component + '] ' + message);
 	}
 
 	setLogger(level: string, maxSize: string, maxFiles: string) {

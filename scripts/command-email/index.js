@@ -1,4 +1,28 @@
 
+/*
+
+# Questions:
+# What is <username> email?
+# Give me <username> email
+# <username> email
+#
+# Command:
+# .email <username>
+#
+# Description:
+# Returns email for the given username
+#
+# Params:
+#
+# username:
+# any username from RocketChat
+#
+# Examples:
+# .email Vassilis
+# .email @Vassilis - (with mention)
+
+*/
+
 module.exports = {
 	name: 'command-email',
 	onDemand: true,
