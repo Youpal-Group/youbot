@@ -4,6 +4,7 @@
         "users",
         "rocketchat-api",
         "mail-server",
-        "zammad"
+        "zammad",
+        "express"
     ]
 }

@@ -4,7 +4,6 @@
 /node_modules
 /security
 .pnp.js
-config.json
 
 # production
 /dist

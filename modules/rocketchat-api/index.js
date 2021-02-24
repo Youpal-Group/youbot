@@ -9,7 +9,7 @@ let connection = {
 };
 
 const initRocketChat = (bot) => {
-	return new Promise((resolve) => {
+	return new Promise(async (resolve) => {
 		if (!connection.userId) {
 			bot.http({
 				url: connection.baseUrl + 'login',

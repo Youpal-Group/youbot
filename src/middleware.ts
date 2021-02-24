@@ -1,5 +1,7 @@
 import Database from './database';
 import axios from 'axios';
+import https from 'https';
+import fs from 'fs';
 import { logger, jsonParser } from './utils';
 
 class Middleware {
@@ -13,15 +15,38 @@ class Middleware {
 	public http: any;
 	public logger: any;
 	public temp: any;
+	public httpsAgent: https.Agent | undefined;
 
 	constructor(db: Database, bots: any [], adapters: any[], scripts: any[], modules: any[], qnafile: string) {
 		this.bots = bots;
 		this.adapters = adapters;
 		this.scripts = scripts;
 		this.modules = modules;
-		this.http = axios;
 		this.logger = logger;
 		this.messages = [];
+		this.httpsAgent = undefined;
+
+		if (process.env.SECURITY_SSL === 'true' && process.env.SECURITY_CERT && process.env.SECURITY_KEY) {
+			try {
+				this.httpsAgent = new https.Agent({
+					cert: fs.readFileSync(process.env.SECURITY_CERT),
+					key: fs.readFileSync(process.env.SECURITY_KEY),
+					rejectUnauthorized: true
+				});
+
+				logger.info('Middleware', 'SSL enabled');
+			}
+			catch (err) {
+				logger.error('Middleware', err);
+				logger.info('Middleware', 'SSL DISABLED');
+			}
+		}
+		else {
+			logger.info('Middleware', 'SSL DISABLED');
+		}
+
+		this.http = axios.create({ httpsAgent: this.httpsAgent });
+
 		this.qnas = jsonParser(qnafile);
 
 		this.scripts.forEach((s) => {

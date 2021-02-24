@@ -137,7 +137,7 @@ module.exports = {
                         msg: user.ticket.reply ? 'Reply to ticket ' + user.ticket.reply : 'Create ticket',
                         attachments: [{
                             color: 'red',
-                            text: '`send`: Send ticket\n`dismiss`: Cancel ticket\n`show`: Display ticket content',
+                            text: '`send`: Send ticket\n`dismiss` or `cancel`: Cancel ticket\n`show`: Display ticket content',
                         },
                         {
                             color: '#73a7ce',

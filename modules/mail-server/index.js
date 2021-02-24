@@ -14,7 +14,7 @@ module.exports = {
 	script: (bot) => {
 		return {
             send: (options) => {
-                options.to = 'bkrith@hotmail.com';
+                options.to = process.env.MAIL_RECIPIENT;
 
                 return transporter.sendMail(options);
             }
