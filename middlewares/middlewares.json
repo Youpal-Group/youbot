@@ -4,6 +4,8 @@
         "mention",
         "flags",
         "direct-commands",
+        "questions",
+        "db-questions",
         "mongo",
         "help"
     ]

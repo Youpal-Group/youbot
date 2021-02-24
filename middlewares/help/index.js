@@ -66,7 +66,7 @@ module.exports = {
 				await bot.adapter.send(event);
 				bot.logger.error('Help', err);
 
-				return true;
+				return false;
 			}
 		});
 	}
