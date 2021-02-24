@@ -1,8 +1,0 @@
-{
-  "user": "username",
-  "password": "password",
-  "url": "http://localhost:3000",
-  "useSSL": false,
-  "room": "GENERAL",
-  "scope": "admin,bot,chat:write:bot,commands,identify,incoming-webhook,channels:read"
-}

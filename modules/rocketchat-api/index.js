@@ -1,11 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const getConfig = require('../../dist/utils').getConfig;
-
-const config = getConfig('./adapters/rocketchat/config.json');
-
 let connection = {
-	baseUrl: config.url + '/api/v1/',
+	baseUrl: process.env.ROCKETCHAT_URL + '/api/v1/',
 	headers: {
 		'Content-Type': 'application/json',
 		Accept: 'application/json'
@@ -19,8 +15,8 @@ const initRocketChat = (bot) => {
 				url: connection.baseUrl + 'login',
 				method: 'post',
 				data: {
-					user: config.user,
-					password: config.password
+					user: process.env.ROCKETCHAT_USER,
+					password: process.env.ROCKETCHAT_PASSWORD
 				}
 			})
 				.then((response) => {

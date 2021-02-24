@@ -5,17 +5,17 @@ class Database {
 	public db: Mongo.Db | undefined;
 	private mongoClient: Mongo.MongoClient;
 
-	constructor(config: any) {
+	constructor() {
 		const mngClient = Mongo.MongoClient;
 		this.mongoClient = {} as Mongo.MongoClient;
 		this.db = undefined;
 
-		mngClient.connect(config.mongoUrl, { useUnifiedTopology: true }, (err, db) => {
+		mngClient.connect(process.env.MONGO_URL || '', { useUnifiedTopology: true }, (err, db) => {
 			if (err) {
 				logger.error('MongoDB', err);
 			} else {
 				this.mongoClient = db;
-				this.db = db.db(config.mongoDb);
+				this.db = db.db(process.env.MONGO_DB);
 				logger.info('MongoDB', 'Connected');
 			}
 		});

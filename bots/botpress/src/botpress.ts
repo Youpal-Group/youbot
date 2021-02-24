@@ -1,8 +1,7 @@
 
 import EventEmitter from 'events';
 import axios from 'axios';
-import { Config } from './config';
-import { getConfig, logger } from '../../../dist/utils';
+import { logger } from '../../../dist/utils';
 
 class BotPress {
 	public connected: boolean;
@@ -10,7 +9,6 @@ class BotPress {
 	public name: string;
 
 	constructor() {
-		const config: Config = getConfig('./bots/botpress/config.json');
 		this.connected = false;
 		this.name = 'BotPress';
 
@@ -18,7 +16,7 @@ class BotPress {
 
 		this.events.on('send', (message: any) => {
 			axios({
-				url: `${config.url}/api/v1/bots/${config.botId}/converse/${message.user.username}`,
+				url: `${process.env.BOTPRESS_URL}/api/v1/bots/${process.env.BOTPRESS_BOTID}/converse/${message.user.username}`,
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

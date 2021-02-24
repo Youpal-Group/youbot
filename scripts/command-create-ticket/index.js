@@ -58,6 +58,7 @@ module.exports = {
                         }
 
                         break;
+                    case 'cancel':
                     case 'dismiss':
                         user.ticket = false;
                         user.flag = false;

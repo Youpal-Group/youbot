@@ -2,20 +2,17 @@
 import { driver } from '@rocket.chat/sdk';
 import EventEmitter from 'events';
 import outgoing from './outgoing';
-import { Config } from './config';
-import { getConfig, logger } from '../../../dist/utils';
+import { logger } from '../../../dist/utils';
 
 class RocketChat {
-	private config: Config;
 	public connected: boolean;
 	public events: EventEmitter;
 	public username: string;
 	public name: string;
 
 	constructor() {
-		this.config = getConfig('./adapters/rocketchat/config.json');
 		this.connected = false;
-		this.username = this.config.user;
+		this.username = process.env.ROCKETCHAT_USER || '';
 		this.name = 'RocketChat';
 
 		this.events = new EventEmitter();
@@ -49,16 +46,16 @@ class RocketChat {
 		}
 
 		try {
-			const useSSL = this.config.useSSL === true;
+			const useSSL = process.env.ROCKETCHAT_USESSL === 'true';
 			await driver.connect({
-				host: this.config.url,
+				host: process.env.ROCKETCHAT_URL,
 				useSsl: useSSL
 			});
 			await driver.login({
-				username: this.config.user,
-				password: this.config.password
+				username: process.env.ROCKETCHAT_USER,
+				password: process.env.ROCKETCHAT_PASSWORD || ''
 			});
-			await driver.joinRooms(handleChannel(this.config.room));
+			await driver.joinRooms(handleChannel(process.env.ROCKETCHAT_ROOM || 'GENERAL'));
 			await driver.subscribeToMessages();
 			this.connected = true;
 
@@ -146,10 +143,6 @@ class RocketChat {
 			},
 			channel: channel
 		};
-	}
-
-	setConfig(config: Config) {
-		this.config = config;
 	}
 
 	sendMessage(msg: string | any, event: any) {

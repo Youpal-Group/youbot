@@ -1,7 +1,0 @@
-{
-    "mongoUrl": "mongodb://localhost:27017/",
-    "mongoDb": "botpress",
-    "debugLevel": "debug",
-    "debugMaxSize": "20m",
-    "debugMaxFiles": "14d"
-}

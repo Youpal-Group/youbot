@@ -1,13 +1,10 @@
-const { getConfig } = require("../../dist/utils");
-
-const config = getConfig('./modules/zammad/config.json');
 
 module.exports = {
 	name: 'zammad',
 	script: (bot) => {
 		return {
             link: (id) => {
-                return config.host + '/#ticket/zoom/' + id;
+                return process.env.ZAMMAD_HOST + '/#ticket/zoom/' + id;
             },
             userId: async (rcId) => {
                 try {
@@ -22,12 +19,12 @@ module.exports = {
                         const email = res.user.emails[0].address;
 
                         const zRes = await bot.http({
-                            url: config.host + '/api/v1/users/search?query=email:' + email,
+                            url: process.env.ZAMMAD_HOST + '/api/v1/users/search?query=email:' + email,
                             method: 'GET',
                             headers: {
                                 'Content-Type': 'application/json',
                                 Accept: 'application/json',
-                                Authorization: 'Token token=' + config.token
+                                Authorization: 'Token token=' + process.env.ZAMMAD_TOKEN
                             }
                         });
 
@@ -39,12 +36,12 @@ module.exports = {
                             }
                             else {
                                 const newUser = await bot.http({
-                                    url: config.host + '/api/v1/users',
+                                    url: process.env.ZAMMAD_HOST + '/api/v1/users',
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json',
                                         Accept: 'application/json',
-                                        Authorization: 'Token token=' + config.token
+                                        Authorization: 'Token token=' + process.env.ZAMMAD_TOKEN
                                     },
                                     data: {
                                         firstname: res.user.name.split(' ')[0],
@@ -71,22 +68,22 @@ module.exports = {
             tickets: async (userId) => {
                 try {
                     const res = await bot.http({
-                        url: `${config.host}/api/v1/tickets/search?query=customer_id:${userId}`,
+                        url: `${process.env.ZAMMAD_HOST}/api/v1/tickets/search?query=customer_id:${userId}`,
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json',
                             Accept: 'application/json',
-                            Authorization: 'Token token=' + config.token
+                            Authorization: 'Token token=' + process.env.ZAMMAD_TOKEN
                         }
                     });
 
                     const statesRes = await bot.http({
-                        url: `${config.host}/api/v1/ticket_states`,
+                        url: `${process.env.ZAMMAD_HOST}/api/v1/ticket_states`,
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json',
                             Accept: 'application/json',
-                            Authorization: 'Token token=' + config.token
+                            Authorization: 'Token token=' + process.env.ZAMMAD_TOKEN
                         }
                     });
 
@@ -112,12 +109,12 @@ module.exports = {
             articles: async (ticketId) => {
                 try {
                     const res = await bot.http({
-                        url: config.host + '/api/v1/ticket_articles/by_ticket/' + ticketId,
+                        url: process.env.ZAMMAD_HOST + '/api/v1/ticket_articles/by_ticket/' + ticketId,
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json',
                             Accept: 'application/json',
-                            Authorization: 'Token token=' + config.token
+                            Authorization: 'Token token=' + process.env.ZAMMAD_TOKEN
                         }
                     });
 
@@ -132,7 +129,7 @@ module.exports = {
             add: async (userId, subject, body, ticketId = 0) => {
                 try {
                     let data = {};
-                    let host = config.host;
+                    let host = process.env.ZAMMAD_HOST;
 
                     if (ticketId) {
                         data = {
@@ -146,7 +143,7 @@ module.exports = {
                     else {
                         data = {
                             title: subject,
-                            group: config.group,
+                            group: process.env.ZAMMAD_GROUP,
                             customer_id: userId,
                             article: {
                                 subject: subject,
@@ -165,7 +162,7 @@ module.exports = {
                         headers: {
                             'Content-Type': 'application/json',
                             Accept: 'application/json',
-                            Authorization: 'Token token=' + config.token
+                            Authorization: 'Token token=' + process.env.ZAMMAD_TOKEN
                         },
                         data: data
                     });
