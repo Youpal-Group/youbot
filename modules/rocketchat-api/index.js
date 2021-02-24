@@ -25,7 +25,7 @@ const initRocketChat = (bot) => {
 			})
 				.then((response) => {
 					if (response.status === 401) {
-						bot.logger.warn('RocketChat API Script', "I can't log in RocketChat!");
+						bot.logger.warn('RocketChat API', "I can't log in RocketChat!");
 						return resolve(false);
 					}
 
@@ -44,12 +44,12 @@ const initRocketChat = (bot) => {
 						Accept: 'application/json'
 					};
 
-					bot.logger.info('RocketChat API Script', 'Connection initialized');
+					bot.logger.info('RocketChat API', 'Connection initialized');
 
 					return resolve(true);
 				})
 				.catch((err) => {
-					bot.logger.error('RocketChat API Script', err);
+					bot.logger.error('RocketChat API', err);
 					return resolve(false);
 				});
 		}
@@ -71,14 +71,14 @@ const executeCall = (bot, args, ranOnce = false) => {
 		})
 		.catch(async (err) => {
 			if (ranOnce) {
-				bot.logger.warn('RocketChat API Script', "I can't log in RocketChat!");
+				bot.logger.warn('RocketChat API', "I can't log in RocketChat!");
 				return false;
 			}
 			else if (err.response.status === 401) {
 				connection.userId = undefined;
 
 				if (!await initRocketChat(bot)) {
-					bot.logger.warn('RocketChat API Script', "I can't log in RocketChat!");
+					bot.logger.warn('RocketChat API', "I can't log in RocketChat!");
 					return false;
 				}
 
@@ -86,10 +86,10 @@ const executeCall = (bot, args, ranOnce = false) => {
 			}
 
 			if (err.response && err.response.data && !err.response.data.success && err.response.data.error) {
-				bot.logger.error('RocketChat API Script', err.response.data.error);
+				bot.logger.error('RocketChat API', err.response.data.error);
 			}
 			else {
-				bot.logger.error('RocketChat API Script', err);
+				bot.logger.error('RocketChat API', err);
 			}
 
 			return false;
@@ -98,11 +98,13 @@ const executeCall = (bot, args, ranOnce = false) => {
 
 module.exports = {
 	name: 'rocketchat-api',
-	onDemand: true,
-	script: async (event, bot, args) => {
-		console.log(event, bot, args);
-		await initRocketChat(bot);
+	script: (bot) => {
+		initRocketChat(bot);
 
-		return await executeCall(bot, args);
+		return {
+			api: async (args) => {
+				return await executeCall(bot, args);
+			}
+		};
 	}
 };

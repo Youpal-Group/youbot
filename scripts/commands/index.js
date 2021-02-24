@@ -21,7 +21,7 @@ module.exports = {
 				await bot.adapter.send(event);
 				bot.logger.error('Commands', err);
 
-				return true;
+				return false;
 			}
 		});
 	}

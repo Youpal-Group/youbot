@@ -10,6 +10,8 @@ class Middleware {
 	public modules: any[];
 	public qnas: string[];
 	public db: Database;
+	public http: any;
+	public logger: any;
 	public temp: any;
 
 	constructor(db: Database, bots: any [], adapters: any[], scripts: any[], modules: any[], qnafile: string) {
@@ -17,6 +19,8 @@ class Middleware {
 		this.adapters = adapters;
 		this.scripts = scripts;
 		this.modules = modules;
+		this.http = axios;
+		this.logger = logger;
 		this.messages = [];
 		this.qnas = jsonParser(qnafile);
 
@@ -57,12 +61,19 @@ class Middleware {
 
 	private initModules() {
 		this.modules = this.modules.map((mod: any) => {
-			const temp = {
-				name: mod.name,
-				...(mod.script(this))
+			return {
+				...mod,
+				...(mod.script({
+					http: this.http,
+					db: this.db,
+					logger: logger,
+					temp: this.temp,
+					questions: this.qnas,
+					module: (name: string) => this.modules.filter((s) => s.name === name)[0] || undefined,
+					getAdapter: (name: string) => this.adapters.filter((s) => s.name === name)[0] || undefined,
+					script: (name: string) => this.scripts.filter((s) => s.name === name)[0] || undefined
+				}))
 			};
-
-			return temp;
 		});
 	}
 
@@ -95,7 +106,7 @@ class Middleware {
 			if (script) {
 				if (script.outgoing === outgoing && !script.onDemand) {
 					return script.script(message, {
-						http: axios,
+						http: this.http,
 						db: this.db,
 						logger: logger,
 						temp: this.temp,

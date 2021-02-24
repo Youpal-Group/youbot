@@ -55,7 +55,7 @@ module.exports = {
 					}, 200);
 				}
 				else {
-					event.message = msgs.shift();
+					event.message = msgs.shift() || 'No results!';
 					await bot.adapter.send(event);
 				}
 

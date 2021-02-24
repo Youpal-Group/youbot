@@ -8,15 +8,20 @@
 # Create ticket
 # Open ticket
 # I want to crete a ticket
+# I want to reply to ticket <id>
+# Reply to ticket <id>
+# Reply ticket <id>
+# Reply <id>
 #
 # Command:
-# .create-ticket
+# .create-ticket [<ticketId>]
 #
 # Description:
-# Create a new ticket in Zammad (HelpDesk)
+# Create a new ticket in Zammad (HelpDesk) or reply to specific ticket id
 #
 # Examples:
 # .create-ticket
+# .create-ticket 23
 
 */
 
@@ -28,9 +33,9 @@ module.exports = {
             const users = bot.module('users');
             let user = users.get(event.user._id);
 
-            if (!event.channel.endsWith(event.user._id)) {
+            if (!event.dm) {
                 if (user && user.ticket) {
-                    user = users.update({ flag: false, ticket: false, updated: Date.now() });
+                    user = users.update({ ...user, flag: false, ticket: false, updated: Date.now() });
 
                     await bot.adapter.sendDirectMessage('Previous ticket dismissed.', event);
                 }
@@ -64,19 +69,19 @@ module.exports = {
                         break;
                     case 'send':
                         if (user.ticket.subject && user.ticket.text) {
-                            await bot.adapter.sendDirectMessage('Sending...', event);
+                            await bot.adapter.sendDirectMessage('Creating...', event);
 
-                            const sentInfo = await bot.module('mail-server').send(user.ticket);
+                            const sentInfo = await bot.module('zammad').add(user.ticket.from, user.ticket.subject, user.ticket.text, user.ticket.reply);
 
-                            if (sentInfo.accepted.length) {
+                            if (sentInfo && !sentInfo.error) {
                                 user.ticket = false;
                                 user.flag = false;
         
                                 users.update({ ...user, updated: Date.now() });
 
-                                bot.logger.debug('Command-create-ticket', 'Sent email ' + sentInfo.messageId);
+                                bot.logger.debug('Command-create-ticket', 'Opened Ticket: ' + sentInfo);
 
-                                await bot.adapter.sendDirectMessage('Ticket sent.', event);
+                                await bot.adapter.sendDirectMessage(`Ticket opened with id ${sentInfo}`, event);
                             }
                             else {
                                 bot.logger.debug('Command-create-ticket', 'Error in mail send');
@@ -114,25 +119,21 @@ module.exports = {
                     from: '',
                     subject: '',
                     text: '',
-                    step: 1
+                    step: 1,
+                    reply: params,
                 }, updated: Date.now() });
 
-                const res = await bot.script('rocketchat-api').script(event, bot, {
-                    method: 'get',
-                    api: 'users.info',
-                    params: 'userId=' + event.user._id,
-                    data: undefined
-                });
+                const zId = await bot.module('zammad').userId(event.user._id);
 
                 event.channel = event.user._id;
-                
-                if (res.user && res.user.emails && res.user.emails.length) {
-                    users.update({ flag: 'create-ticket', ticket: user.ticket, updated: Date.now() });
 
-                    user.ticket.from = res.user.emails[0].address;
+                if (zId) {
+                    user.ticket.from = zId;
+
+                    user = users.update({ ...user, flag: 'create-ticket', ticket: user.ticket, updated: Date.now() });
 
                     await bot.adapter.sendDirectMessage({
-                        msg: 'Create ticket',
+                        msg: user.ticket.reply ? 'Reply to ticket ' + user.ticket.reply : 'Create ticket',
                         attachments: [{
                             color: 'red',
                             text: '`send`: Send ticket\n`dismiss`: Cancel ticket\n`show`: Display ticket content',
@@ -164,18 +165,20 @@ module.exports = {
                     await bot.adapter.sendDirectMessage('What is the subject?', event);
                 }
                 else {
-                    users.update({ flag: false, ticket: false, updated: Date.now() });
+                    users.update({ ...user, flag: false, ticket: false, updated: Date.now() });
 
-                    await bot.adapter.sendDirectMessage('You have no email in your RocketChat profile', event);
+                    await bot.adapter.sendDirectMessage('You have no email in your RocketChat profile or in Zammad!', event);
                 }
             }
 
 			return false;
 		}
 		catch (err) {
-			bot.logger.error('Command-email', err);
+            users.update({ ...user, flag: false, ticket: false, updated: Date.now() });
 
-			return true;
+			bot.logger.error('Command-create-ticket', err);
+
+			return false;
 		}
 	}
 };

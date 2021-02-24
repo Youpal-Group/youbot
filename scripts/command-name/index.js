@@ -30,7 +30,7 @@ module.exports = {
 		try {
 			params = params.startsWith('@') ? params.substring(1) : params;
 
-			const res = await bot.script('rocketchat-api').script(event, bot, {
+			const res = await bot.module('rocketchat-api').api({
 				method: 'get',
 				api: 'users.info',
 				params: 'username=' + params,
@@ -58,7 +58,7 @@ module.exports = {
 		catch (err) {
 			bot.logger.error('Command-name', err);
 
-			return true;
+			return false;
 		}
 	}
 };

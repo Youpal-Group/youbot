@@ -101,7 +101,7 @@ module.exports = {
 			catch(err) {
 				bot.logger.error('Command-ui', err);
 
-				return true;
+				return false;
 			}
 		});
 	}

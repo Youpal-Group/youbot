@@ -1,11 +1,12 @@
 {
     "scripts": [
         "commands",
-        "mongo",
+        "command-create-ticket",
+        "command-tickets",
+        "command-ticket",
         "command-email",
         "command-name",
-        "command-create-ticket",
         "command-ui",
-        "rocketchat-api"
+        "mongo"
     ]
 }

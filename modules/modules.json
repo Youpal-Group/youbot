@@ -2,6 +2,8 @@
 {
     "modules": [
         "users",
-        "mail-server"
+        "rocketchat-api",
+        "mail-server",
+        "zammad"
     ]
 }
