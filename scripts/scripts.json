@@ -7,6 +7,7 @@
         "command-email",
         "command-name",
         "command-ui",
+        "command-train",
         "mongo"
     ]
 }

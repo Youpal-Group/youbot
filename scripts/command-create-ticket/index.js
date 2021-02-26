@@ -91,7 +91,8 @@ module.exports = {
                             }
                         }
                         else {
-                            await bot.adapter.sendDirectMessage('Subject and/or message is empty!', event);
+                            if (user.ticket.step === 1) await bot.adapter.sendDirectMessage('Subject is empty! Enter your subject.', event);
+                            else await bot.adapter.sendDirectMessage('Ticket message is empty! Enter your subject.', event);
                         }
 
                         break;
@@ -106,6 +107,32 @@ module.exports = {
                                 break;
                             case 2:
                                 user.ticket.text += event.message + '\n';
+    
+                                await bot.adapter.sendDirectMessage({
+                                    msg: 'Added message (You can continue add content in your message)',
+                                    attachments: [{
+                                        color: '#73a7ce',
+                                        button_alignment: 'horizontal',
+                                        actions: [{
+                                            type: "button",
+                                            text: "Send",
+                                            msg_in_chat_window: true,
+                                            msg: "send"
+                                        },
+                                        {
+                                            type: "button",
+                                            text: "Dismiss",
+                                            msg_in_chat_window: true,
+                                            msg: "dismiss"
+                                        },
+                                        {
+                                            type: "button",
+                                            text: "Show",
+                                            msg_in_chat_window: true,
+                                            msg: "show"
+                                        }]
+                                    }]
+                                }, event);
     
                                 break;
                             default:

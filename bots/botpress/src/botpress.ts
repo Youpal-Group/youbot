@@ -105,6 +105,125 @@ class BotPress {
 			});
 	}
 
+	deleteQuestion(id: string, question: any): any {
+		return axios({
+			url: `${process.env.BOTPRESS_URL}/api/v1/bots/${process.env.BOTPRESS_BOTID}/mod/qna/questions/${id}/delete?limit=1`,
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + this.token
+			},
+			data: question
+		})
+			.then((res) => {
+				if (res && res.data) {
+					return true;
+				}
+
+				return false;
+			})
+			.catch((err) => {
+				if (err.response.status === 401) {
+					if (this.login()) {
+						return this.updateQuestion(id, question);
+					}
+				}
+
+				logger.error(this.name, err);
+
+				return false;
+			});
+	}
+
+	train(): any {
+		return axios({
+			url: `${process.env.BOTPRESS_URL}/api/v1/bots/${process.env.BOTPRESS_BOTID}/mod/nlu/train/en`,
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + this.token
+			}
+		})
+			.then((res) => {
+				if (res) {
+					return true;
+				}
+
+				return false;
+			})
+			.catch((err) => {
+				if (err.response.status === 401) {
+					if (this.login()) {
+						return this.train();
+					}
+				}
+
+				logger.error(this.name, err);
+
+				return false;
+			});
+	}
+
+	updateQuestion(id: string, question: any): any {
+		return axios({
+			url: `${process.env.BOTPRESS_URL}/api/v1/bots/${process.env.BOTPRESS_BOTID}/mod/qna/questions/${id}?limit=1`,
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + this.token
+			},
+			data: question
+		})
+			.then((res) => {
+				if (res && res.data) {
+					return true;
+				}
+
+				return false;
+			})
+			.catch((err) => {
+				if (err.response.status === 401) {
+					if (this.login()) {
+						return this.updateQuestion(id, question);
+					}
+				}
+
+				logger.error(this.name, err);
+
+				return false;
+			});
+	}
+
+	addQuestion(question: any): any {
+		return axios({
+			url: `${process.env.BOTPRESS_URL}/api/v1/bots/${process.env.BOTPRESS_BOTID}/mod/qna/questions`,
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + this.token
+			},
+			data: question
+		})
+			.then((res) => {
+				if (res && res.data) {
+					return res.data;
+				}
+
+				return false;
+			})
+			.catch((err) => {
+				if (err.response.status === 401) {
+					if (this.login()) {
+						return this.addQuestion(question);
+					}
+				}
+
+				logger.error(this.name, err);
+
+				return false;
+			});
+	}
+
 	send(event: any) {
 		this.events.emit('send', event);
 	}

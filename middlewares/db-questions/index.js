@@ -1,4 +1,3 @@
-
 module.exports = {
 	name: 'db-questions',
 	outgoing: false,
@@ -13,7 +12,30 @@ module.exports = {
                         data: undefined
                     });
         
-                    if (res && res.user && res.user.roles && res.user.roles.includes('admin')) {
+                    if (res && res.user && res.user.roles && res.user.roles.some((role) => process.env.QNA_MANAGER_ROLE.split(',').includes(role))) {
+
+                        const addRes = await bot.bot('BotPress').addQuestion({
+                            action: "text",
+                            contexts: [
+                                "global"
+                            ],
+                            enabled: true,
+                            questions: {
+                                en: regParts[1].split('|')
+                            },
+                            answers: {
+                                en: regParts[2].split('|')
+                            }
+                        });
+
+                        event.channel = event.user._id;
+
+                        if (res.upsertedId) event.message = 'QnA added';
+                        else event.message = 'QnA updated';
+
+                        bot.adapter.sendDirectMessage('QnA added with ID ' + addRes[0], event);
+
+                        /*
                         return bot.db.db.collection('questions')
                             .updateOne({ q: regParts[1].trim().toLowerCase() }, {
                                 $set: {
@@ -39,6 +61,7 @@ module.exports = {
 
                                 return false;
                             });
+                        */
                     }
                     else {
                         event.message = 'Sorry, you must ask from Admin to add this question. :(';
