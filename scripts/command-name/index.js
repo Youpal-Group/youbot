@@ -30,28 +30,52 @@ module.exports = {
 		try {
 			params = params.startsWith('@') ? params.substring(1) : params;
 
-			const res = await bot.module('rocketchat-api').api({
-				method: 'get',
-				api: 'users.info',
-				params: 'username=' + params,
-				data: undefined
-			});
+			if (process.env.SUITE === 'true') {
+				const contact = await bot.module('suite').contact(process.env.SUITE_QUERY_FIELD, params);
+				let response = '';
 
-			let response = '';
+				if (contact) {
+					const fn = contact.fn;
 
-			if (!res) {
-				response = params + ' not exists!';
-			}
-			else if (res.user && res.user.name) {
-				response = params + "'s name is " + res.user.name;
+					if (fn) {
+						response = params + "'s name is " + fn;
+					}
+					else {
+						response = 'Has no name!';
+					}
+				}
+				else {
+					response = params + ' not exists!';
+				}
+				
+				event.message = response;
+
+				bot.adapter.send(event);
 			}
 			else {
-				response = 'Has no name!';
+				const res = await bot.module('rocketchat-api').api({
+					method: 'get',
+					api: 'users.info',
+					params: 'username=' + params,
+					data: undefined
+				});
+
+				let response = '';
+
+				if (!res) {
+					response = params + ' not exists!';
+				}
+				else if (res.user && res.user.name) {
+					response = params + "'s name is " + res.user.name;
+				}
+				else {
+					response = 'Has no name!';
+				}
+
+				event.message = response;
+
+				bot.adapter.send(event);
 			}
-
-			event.message = response;
-
-			bot.adapter.send(event);
 
 			return false;
 		}

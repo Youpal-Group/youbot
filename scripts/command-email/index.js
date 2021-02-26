@@ -30,31 +30,58 @@ module.exports = {
 		try {
 			params = params.startsWith('@') ? params.substring(1) : params;
 
-			const res = await bot.module('rocketchat-api').api({
-				method: 'get',
-				api: 'users.info',
-				params: 'username=' + params,
-				data: undefined
-			});
+			if (process.env.SUITE === 'true') {
+				const contact = await bot.module('suite').contact(process.env.SUITE_QUERY_FIELD, params);
+				let response = 'I found ';
 
-			let response = 'I found ';
+				if (contact) {
+					const emails = contact.email.map((email) => email.value);
 
-			if (!res) {
-				response = params + ' not exists!';
-			}
-			else if (res.user && res.user.emails && res.user.emails.length) {
-				res.user.emails.forEach((email, inx) => {
-					if (inx) response += ', ';
-					response += email.address;
-				});
+					if (emails) {
+						emails.forEach((email, inx) => {
+							if (inx) response += ', ';
+							response += email;
+						});
+					}
+					else {
+						response = ' no emails!';
+					}
+				}
+				else {
+					response = params + ' not exists!';
+				}
+				
+				event.message = response;
+
+				bot.adapter.send(event);
 			}
 			else {
-				response += 'no emails!';
+				const res = await bot.module('rocketchat-api').api({
+					method: 'get',
+					api: 'users.info',
+					params: 'username=' + params,
+					data: undefined
+				});
+
+				let response = 'I found ';
+
+				if (!res) {
+					response = params + ' not exists!';
+				}
+				else if (res.user && res.user.emails && res.user.emails.length) {
+					res.user.emails.forEach((email, inx) => {
+						if (inx) response += ', ';
+						response += email.address;
+					});
+				}
+				else {
+					response += 'no emails!';
+				}
+
+				event.message = response;
+
+				bot.adapter.send(event);
 			}
-
-			event.message = response;
-
-			bot.adapter.send(event);
 
 			return false;
 		}

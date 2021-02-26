@@ -5,6 +5,7 @@
         "rocketchat-api",
         "mail-server",
         "zammad",
-        "express"
+        "express",
+        "suite"
     ]
 }
