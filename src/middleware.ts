@@ -2,7 +2,7 @@ import Database from './database';
 import axios from 'axios';
 import https from 'https';
 import fs from 'fs';
-import { logger, jsonParser } from './utils';
+import { logger } from './utils';
 
 class Middleware {
 	public bots: any[];
@@ -17,7 +17,7 @@ class Middleware {
 	public temp: any;
 	public httpsAgent: https.Agent | undefined;
 
-	constructor(db: Database, bots: any [], adapters: any[], scripts: any[], modules: any[], qnafile: string) {
+	constructor(db: Database, bots: any [], adapters: any[], scripts: any[], modules: any[]) {
 		this.bots = bots;
 		this.adapters = adapters;
 		this.scripts = scripts;
@@ -47,7 +47,7 @@ class Middleware {
 
 		this.http = axios.create({ httpsAgent: this.httpsAgent });
 
-		this.qnas = jsonParser(qnafile);
+		this.qnas = [];
 
 		this.scripts.forEach((s) => {
 			if (s.doc.questions.length) {
@@ -95,6 +95,7 @@ class Middleware {
 					temp: this.temp,
 					questions: this.qnas,
 					module: (name: string) => this.modules.filter((s) => s.name === name)[0] || undefined,
+					bot: (name: string) => this.bots.filter((bot) => bot.name === name)[0] || undefined,
 					getAdapter: (name: string) => this.adapters.filter((s) => s.name === name)[0] || undefined,
 					script: (name: string) => this.scripts.filter((s) => s.name === name)[0] || undefined
 				}))
@@ -137,6 +138,7 @@ class Middleware {
 						temp: this.temp,
 						questions: this.qnas,
 						adapter: this.adapters.filter((adapter) => adapter.name === message.adapter)[0],
+						bot: (name: string) => this.bots.filter((bot) => bot.name === name)[0] || undefined,
 						module: (name: string) => this.modules.filter((s) => s.name === name)[0] || undefined,
 						getAdapter: (name: string) => this.adapters.filter((s) => s.name === name)[0] || undefined,
 						script: (name: string) => this.scripts.filter((s) => s.name === name)[0] || undefined,

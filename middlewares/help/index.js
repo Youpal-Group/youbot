@@ -5,23 +5,8 @@ module.exports = {
 	script: async (event, bot, params) => {
         return bot.hear(/^help(?: (.*))?$/, async (regParts) => {
 			try {
-				let questions = [];
-				if (regParts[1]) {
-					questions = bot.questions.filter((q) => {
-						if (q.toLowerCase().includes(regParts[1].toLowerCase())) return true;
-
-						const split = regParts[1].split(' ');
-
-						if (split.length) {
-							return split.some((spl) => q.toLowerCase().includes(spl.toLowerCase().trim()));
-						}
-
-						return false;
-					});
-				}
-				else {
-					questions = bot.questions;
-				}
+				let questions = (await bot.bot('BotPress').questions(regParts[1])).map((question) => question.data.questions.en);
+				questions = questions.flat().concat(bot.questions);
 
 				const msgs = [];
 				let msg = '';

@@ -48,7 +48,7 @@ const initialize = async () => {
 
 		logger.info('Middleware', `Registered ${modules.length} modules`);
 
-		return new Middleware(new Database(), bots, adapters, middlewares.concat(scripts), modules, process.env.BOTPRESS_QNA || './qna/qna.json');
+		return new Middleware(new Database(), bots, adapters, middlewares.concat(scripts), modules);
 	}
 	catch (err) {
 		logger.error('Middleware', err);
