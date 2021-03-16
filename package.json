@@ -9,7 +9,7 @@
     "build": "tsc",
     "dev": "tsc -w & nodemon -r dotenv/config -q -w dist dist/index.js",
     "startWatch": "nodemon",
-    "start": "node --trace-warnings -r dotenv/config dist/index.js",
+    "start": "node -r dotenv/config dist/index.js",
     "test": "jest",
     "pretest": "eslint --ignore-path .gitignore .",
     "fix": "./node_modules/.bin/eslint --fix --ignore-path .gitignore ."
