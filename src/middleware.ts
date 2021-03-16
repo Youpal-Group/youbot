@@ -65,12 +65,12 @@ class Middleware {
 		});
 
 		this.bots.forEach((bot) => {
-			bot.received((message: any) => {
+			bot.received(async (message: any) => {
 				logger.debug('Middleware', `Received from bot ${bot.name}`);
-				this.executeScripts(message)
-					.then((res: any) => {
+				await this.executeScripts(message)
+					.then(async (res: any) => {
 						if (res) {
-							this.adapters.filter((adapter) => adapter.name === message.adapter)[0].send(message);
+							return this.adapters.filter((adapter) => adapter.name === message.adapter)[0].send(message);
 						}
 					})
 					.catch((err: any) => logger.error('Middleware', err));
@@ -143,16 +143,19 @@ class Middleware {
 						getAdapter: (name: string) => this.adapters.filter((s) => s.name === name)[0] || undefined,
 						script: (name: string) => this.scripts.filter((s) => s.name === name)[0] || undefined,
 						hear: async (regex: RegExp, callback: any, elseCallback?: any) => {
-							const matches = message.message.match(regex);
-							if (matches !== null) {
-								matches.forEach((m: any, mInx: number) => {
-									if ((typeof m) === 'string') matches[mInx] = m.trim();
-								});
-								if (matches[1]) matches[1] = matches[1].toLowerCase();
-								return callback(matches);
+							if (typeof (message.message) === 'string') {
+								const matches = message.message.match(regex);
+								if (matches !== null) {
+									matches.forEach((m: any, mInx: number) => {
+										if ((typeof m) === 'string') matches[mInx] = m.trim();
+									});
+									if (matches[1]) matches[1] = matches[1].toLowerCase();
+									return callback(matches);
+								}
+								else if (elseCallback) return elseCallback();
+								else return true;
 							}
-							else if (elseCallback) return elseCallback();
-							else return true;
+							return true;
 						}
 					})
 						.then((executed: any) => {

@@ -3,9 +3,7 @@
     "modules": [
         "users",
         "rocketchat-api",
-        "mail-server",
         "zammad",
-        "express",
         "suite"
     ]
 }

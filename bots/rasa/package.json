@@ -1,0 +1,13 @@
+{
+  "name": "channel-botpress",
+  "fullName": "BotPress connector",
+  "version": "1.0.0",
+  "description": "Youbot connector for BotPress",
+  "private": true,
+  "author": "Vassilis Kritharakis",
+  "license": "AGPL-3.0-only",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  }
+}

@@ -131,8 +131,8 @@ class RocketChat {
 		this.events.on('incoming', func);
 	}
 
-	send(event: any) {
-		this.events.emit('outgoing', event);
+	async send(event: any) {
+		await this.events.emit('outgoing', event);
 	}
 
 	formatMessage(msg: string, msgType: string, channel: string) {

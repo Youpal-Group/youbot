@@ -10,7 +10,7 @@ class Database {
 		this.mongoClient = {} as Mongo.MongoClient;
 		this.db = undefined;
 
-		mngClient.connect(process.env.MONGO_URL || '', { useUnifiedTopology: true }, (err, db) => {
+		mngClient.connect(process.env.MONGO_URL || '', { useUnifiedTopology: true, useNewUrlParser: true }, (err, db) => {
 			if (err) {
 				logger.error('MongoDB', err);
 			} else {
