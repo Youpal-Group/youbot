@@ -33,9 +33,10 @@ module.exports = {
 
             event.channel = event.user._id;
 
-			const articles = await bot.module('zammad').articles(params);
+            const zId = await bot.module('zammad').userId(event.user._id);
+			const articles = await bot.module('zammad').articles(zId, params);
 
-			if (articles) {
+			if (articles && articles.length) {
                 const fields = [];
 
                 articles.forEach((article) => {

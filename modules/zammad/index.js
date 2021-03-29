@@ -106,10 +106,10 @@ module.exports = {
                     return false;
                 }
             },
-            articles: async (ticketId) => {
+            articles: async (userId, ticketId) => {
                 try {
-                    const res = await bot.http({
-                        url: process.env.ZAMMAD_HOST + '/api/v1/ticket_articles/by_ticket/' + ticketId,
+                    const ticketsRes = await bot.http({
+                        url: `${process.env.ZAMMAD_HOST}/api/v1/tickets/search?query=customer_id:${userId}`,
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json',
@@ -118,7 +118,21 @@ module.exports = {
                         }
                     });
 
-                    return res.data.map((article) => { return { id: article.id, from: article.from, to: article.to, subject: article.subject, body: article.body, updated: article.updated_at } });
+                    if (ticketsRes.data.tickets.includes(Number(ticketId))) {
+                        const res = await bot.http({
+                            url: process.env.ZAMMAD_HOST + '/api/v1/ticket_articles/by_ticket/' + ticketId,
+                            method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                Accept: 'application/json',
+                                Authorization: 'Token token=' + process.env.ZAMMAD_TOKEN
+                            }
+                        });
+
+                        return res.data.map((article) => { return { id: article.id, from: article.from, to: article.to, subject: article.subject, body: article.body, updated: article.updated_at } });
+                    }
+
+                    return [];
                 }
                 catch (err) {
                     bot.logger.error('Zammad', err);
@@ -131,7 +145,17 @@ module.exports = {
                     let data = {};
                     let host = process.env.ZAMMAD_HOST;
 
-                    if (ticketId) {
+                    const ticketsRes = await bot.http({
+                        url: `${process.env.ZAMMAD_HOST}/api/v1/tickets/search?query=customer_id:${userId}`,
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            Accept: 'application/json',
+                            Authorization: 'Token token=' + process.env.ZAMMAD_TOKEN
+                        }
+                    });
+
+                    if (ticketId && ticketsRes.data.tickets.includes(Number(ticketId))) {
                         data = {
                             ticket_id: ticketId,
                             subject: subject,
