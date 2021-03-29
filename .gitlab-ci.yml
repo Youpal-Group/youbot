@@ -1,0 +1,20 @@
+stages:
+  - prod
+
+deploy_to_prod:
+  stage: prod
+  only:
+    refs:
+      - master
+  script:
+    - su - bots
+    - cd /home/bots/youbot
+    - yarn install
+    - yarn build
+    - yarn --cwd ./adapters/rocketchat/ install
+    - yarn --cwd ./adapters/rocketchat/ build
+    - yarn --cwd ./bots/botpress/ install
+    - yarn --cwd ./bots/botpress/ build
+    - sudo service youbot restart
+    - sleep 3
+    - sudo journalctl -u youbot.service -n 30
