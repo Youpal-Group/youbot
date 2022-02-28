@@ -3,7 +3,7 @@
 Advanced middleware for bots and channels with database support written in TypeScript.
 
 ## Workflow
-![workflow of youbot][workflow.jpeg]
+![workflow of youbot][wworkflow.jpeg]
 
 ## Installation
 
