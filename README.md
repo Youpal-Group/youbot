@@ -2,6 +2,9 @@
 
 Advanced middleware for bots and channels with database support written in TypeScript.
 
+## Workflow
+![workflow of youbot][workflow.jpeg]
+
 ## Installation
 
 - Install (`yarn install`) and build (`yarn build`).

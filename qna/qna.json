@@ -1,61 +1,6 @@
 {
   "qnas": [
     {
-      "id": "17n0pigy2e_who_is_head_of_itsm_department",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Herson Bugante"
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who is head of ITSM department?",
-            "Who is head of ITSM?",
-            "head of ITSM",
-            "who is the head of ITSM",
-            "the head of ITSM"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "1e98g418v7_who_is_head_of_hr_department",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Wendy"
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who is head of HR department?",
-            "Who is head of HR?",
-            "head of HR",
-            "head of Human Resources",
-            "Who is head of Human Resources department?",
-            "Who is head of Human Resources?",
-            "who is the head of HR",
-            "the head of HR"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
       "id": "1ewe8y2mi3_how_do_i_use_git",
       "data": {
         "action": "text",
@@ -134,86 +79,6 @@
         "contexts": [
           "global"
         ]
-      }
-    },
-    {
-      "id": "1g5r8vnp4o_can_i_get_access_to_the_data",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Currently we provide an API which gives acces to our pool of candidates and assignments. Specialized requests are held for internal uses for now. The URL is https://api.youdata.se/docs#/ for credentials to get access to more information you would have to submit a ticket requesting this."
-          ]
-        },
-        "questions": {
-          "en": [
-            "Can I get access to the data?",
-            "How do I get access to the data?",
-            "get access to the data",
-            "access to the data"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "1gzvcc22nc_who_s_the_idea_to_integrate_you_to_youchat",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Karl and James, to help people avoid loneliness."
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who's the idea to integrate you to Youchat?",
-            "Who was the idea to integrate you to Youchat?",
-            "Who was the idea to integrate you to chat?",
-            "Who's the idea to integrate you to chat?",
-            "Who's the idea to implement you to Youchat?",
-            "why you were implemented here?",
-            "who added you?",
-            "who implemented you?"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "1lnirjdjcu_who_is_head_of_devops_department",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Floris"
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who is head of DevOps department?",
-            "Who is head of DevOps?",
-            "head of DevOps",
-            "the head of DevOps",
-            "who is the head of DevOps"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
       }
     },
     {
@@ -351,37 +216,6 @@
       }
     },
     {
-      "id": "4kyb4zmf2s_what_is_the_website_of_youpal",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Please, visit https://www.youpalgroup.com"
-          ]
-        },
-        "questions": {
-          "en": [
-            "What is the website of Youpal?",
-            "What is the website of Youpalgroup?",
-            "What is the website of Youpal group?",
-            "What is the site of youpal?",
-            "What is the site of youpalgroup?",
-            "What is the site of youpal group?",
-            "Where i can find information about youpal?",
-            "Where i can find info about youpal?",
-            "Where i can find information about youpalgroup?",
-            "Where i can find info about youpalgroup?"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
       "id": "54677vxx8y_where_are_you_right_now",
       "data": {
         "questions": {
@@ -433,56 +267,6 @@
       }
     },
     {
-      "id": "7sjfc5lwzb_who_is_head_of_marketing_department",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Arabella"
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who is head of Marketing department?",
-            "Who is head of Marketing",
-            "Who is the head of Marketing",
-            "Head of Marketing",
-            "the head of Marketing"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "8bx0m7olq4_what_about_onboarding_process",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "We are working on it.."
-          ]
-        },
-        "questions": {
-          "en": [
-            "What about onboarding process?",
-            "Do you know anything about onboarding process?",
-            "onboarding process"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
       "id": "9flqjl0lkp_can_you_sing",
       "data": {
         "action": "text",
@@ -500,61 +284,6 @@
             "Can you sing?",
             "Are you singing?",
             "singing?"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "bdv1yfzcky_who_is_head_of_products_department",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Aleksandra Asanin"
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who is head of Products department?",
-            "Who is head of Products?",
-            "head of Products",
-            "the head of Products",
-            "who is the head of Products"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "bs4llbkvjl_youdata",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "YouData is responsible for collecting and analyzing Data from different streams"
-          ]
-        },
-        "questions": {
-          "en": [
-            "YouData",
-            "What is YouData?",
-            "Tell me about YouData",
-            "youdata",
-            "about youdata",
-            "do you know youdata?",
-            "What's youdata?",
-            "tell me more about youdata"
           ]
         },
         "redirectFlow": "",
@@ -704,81 +433,6 @@
       }
     },
     {
-      "id": "creuo37xce_how_do_i_get_access_to_the_server",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Please follow this guide https://git.youpal.se/youdata/developers-manual/-/wikis/ML-SERVER-AND-VNC-GUIDE-TO-THE-UNKNOWN"
-          ]
-        },
-        "questions": {
-          "en": [
-            "How do I get access to the server",
-            "get access to the server",
-            "access to the server",
-            "I want access to the server"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "cu37psil9e_who_is_head_of_datateam_department",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Apostolis Argatzopoulos"
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who is head of DataTeam department?",
-            "Who is head of DataTeam?",
-            "head of DataTeam",
-            "the head of DataTeam",
-            "who is the head of DataTeam"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "d1umnr4vvv_what_kind_of_data_does_youdata_have",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "YouData has Candidate, Assignment and Company data. We are also focusing on RFP data."
-          ]
-        },
-        "questions": {
-          "en": [
-            "What kind of Data does YouData have?",
-            "YouData data",
-            "YouData kind of data"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
       "id": "emvlvniuox_shut_up",
       "data": {
         "answers": {
@@ -879,31 +533,6 @@
       }
     },
     {
-      "id": "fo2xfkaasw_what_do_you_think_about_top_management",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "I need to scan all their messages to make a decision. I'll let you know later.."
-          ]
-        },
-        "questions": {
-          "en": [
-            "What do you think about Top Management?",
-            "What you think about Top Management?",
-            "about Top Management",
-            "Top Management"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
       "id": "g8ds9cgjhi_what_are_you_doing",
       "data": {
         "answers": {
@@ -979,58 +608,6 @@
       }
     },
     {
-      "id": "h5wydqxnqx_who_is_head_of_finance_department",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Rajka Stjepanovic"
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who is head of Finance department?",
-            "Who is the head of Finance?",
-            "head of Finance",
-            "the head of Finance",
-            "what is the head of Finance"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "j6yq2whmik_who_is_head_of_sales_department",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Karl and James"
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who is head of Sales department?",
-            "Who is head of Sales",
-            "Who is the head of Sales",
-            "head of Sales",
-            "the head of Sales"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
       "id": "jw1mhspabv_can_you_cook",
       "data": {
         "action": "text",
@@ -1073,62 +650,6 @@
             "What departments we have?",
             "Tell me about the departments",
             "departments"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "mmdrm8xvfy_youpalgroup",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "It's a highly innovative company with an outstanding team) Founded in 2016."
-          ]
-        },
-        "questions": {
-          "en": [
-            "Youpalgroup",
-            "Youpal group",
-            "Youpal",
-            "What is youpal?",
-            "What is youpal group?",
-            "What is youpalgroup?",
-            "Tell me about youpal",
-            "Tell me about youpal group",
-            "Tell me about youpalgroup"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "mwa8g7mgsx_who_is_head_of_pmo_department",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "We will have soon! :)"
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who is head of PMO department?",
-            "Who is head of PMO?",
-            "head of PMO",
-            "the head of PMO",
-            "who is the head of PMO"
           ]
         },
         "redirectFlow": "",
@@ -1185,32 +706,6 @@
         "contexts": [
           "global"
         ]
-      }
-    },
-    {
-      "id": "noc6lj1sj9_why_is_my_youchat_user_not_working",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Somebody who created it forgot to add user role."
-          ]
-        },
-        "questions": {
-          "en": [
-            "Why is my youchat user not working?",
-            "My user not working",
-            "my youchat not working",
-            "youchat user not working",
-            "user not working"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
       }
     },
     {
@@ -1315,7 +810,7 @@
         "answers": {
           "en": [
             "I'm Bob, an NSA secret agent, ready to help you ! ",
-            "I'm Botpal, the smart bot, in Youpal chat!"
+            "I'm Botpal, the smart bot, in youchat!"
           ],
           "fr": [
             "Je suis Bob, un agent secret de la NSA, prêt à vous aider!"
@@ -1427,56 +922,6 @@
       }
     },
     {
-      "id": "x4xz6h74qp_what_about_ticketing_process",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "We are working on it.."
-          ]
-        },
-        "questions": {
-          "en": [
-            "What about ticketing process?",
-            "Do you know anything about ticketing process?",
-            "ticketing process"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "xusxsimqc6_who_is_head_of_legal_department",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "Dilan Samuelsson"
-          ]
-        },
-        "questions": {
-          "en": [
-            "Who is head of Legal department?",
-            "Who is head of Legal?",
-            "head of Legal",
-            "the head of Legal",
-            "who is the head of Legal"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
       "id": "y8sdz1bc51_fine",
       "data": {
         "action": "text",
@@ -1499,32 +944,6 @@
             "Ok",
             "Good!",
             "Perfect!"
-          ]
-        },
-        "redirectFlow": "",
-        "redirectNode": ""
-      }
-    },
-    {
-      "id": "yhx9uylm20_what_do_you_think_about_youfika",
-      "data": {
-        "action": "text",
-        "contexts": [
-          "global"
-        ],
-        "enabled": true,
-        "answers": {
-          "en": [
-            "I think it's fun time for everyone! :partying_face: "
-          ]
-        },
-        "questions": {
-          "en": [
-            "What do you think about YouFika?",
-            "What about YouFika?",
-            "Tell me about YouFika",
-            "Do you know YouFika?",
-            "What is YouFika?"
           ]
         },
         "redirectFlow": "",
